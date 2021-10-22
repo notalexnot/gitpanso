@@ -1,0 +1,38 @@
+# Gitpanso
+
+name: gitpanso
+parent: default
+    
+matches:
+  global_vars: 
+    - name: "es_date"
+      type: date
+      params: 
+        format: "%d-%m-%Y | %H:%M:%s"
+    - name: "date"
+      type: date
+      params:
+        format: "%m-%d-%Y | %H:%m:%s"
+    ## Git 'update' command(s)
+  - trigger: ":gup"
+    replace: "git update"
+    ## Git 'add' shortcuts
+  - trigger: ":gall"
+    replace: "git add -A"
+  - trigger: ":ga"
+    replace: "git add"
+    ## Git 'commit' shortcuts
+  - trigger: ":com1"
+    replace: "git commit -m  \"$|$\" "
+  - trigger: ":com2"
+    replace: "git commit -m \" $|$: {date}\""
+  - trigger: ":com3"
+    replace: "git commit -m \" $|$: {es_date}\""
+    ## Git 'push' commands
+    ###  push
+  - trigger: ":gp"
+    replace: "git push"
+    ### push to remote
+  - trigger: ":gr"
+    replace: "git push --set-upstream origin $|$"
+    ## 
