@@ -35,4 +35,3 @@ matches:
     ### push to remote
   - trigger: ":gr"
     replace: "git push --set-upstream origin $|$"
-    ## 
